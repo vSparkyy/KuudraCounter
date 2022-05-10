@@ -1,0 +1,7 @@
+{
+    "author": "Sparky",
+    "description": "bad kuudra counter (credits to vals)",
+    "version": "1.0.1",
+    "requires": ["PersistentVariables", "SettingsManager"],
+    "entry": "index.js"
+}
