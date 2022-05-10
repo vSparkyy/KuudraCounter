@@ -114,7 +114,7 @@ function make_line(str, opt) {
 }
 
 register('renderOverlay', () => {
-    if (!settings.getSetting("Display", "Global Toggle") || !in_dim("⏣ Forgotten") || !in_dim("⏣ Kuudra")) {
+    if (!settings.getSetting("Display", "Global Toggle")) {
         display.shouldRender = false;
         return;
     }
@@ -127,7 +127,7 @@ register('renderOverlay', () => {
     );
 
     display.clearLines()
-    display.addLine(make_line(`Kuudra's completed: `, session.count));
+    display.addLine(make_line(`Kuudra's killed: ${count.get()} | This session`, session.count));
     display.render()
 })
 
@@ -148,7 +148,8 @@ register('command', reset).setName('kuudrareset')
 // ----------------------------------
 
 register('chat', event => {
+	count.set(count.get() + 1)
 	session.count++;
     cancel(event);
-    ChatLib.chat(`You finished a run - &7(${count.get()})`);
+    ChatLib.chat(`&r&r&r                       &r&6&lYou finished a run!  (${count.get()})&r`);
 }).setCriteria('&r&r&r                               &r&6&lKUUDRA DOWN!&r')
