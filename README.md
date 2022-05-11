@@ -1,4 +1,6 @@
 # KuudraCounter
 bad kuudra counter
 
-counter made for chat triggers, will not work otherwise
+counter made for chat triggers
+
+to download just go to releases and click the zip file
